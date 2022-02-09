@@ -1,0 +1,24 @@
+object:
+- name: Falcon_360_Overview
+  filename: Falcon_360_Overview.pinboard.tml
+  status:
+    status_code: OK
+  type: pinboard
+  id: e0836cad-4fdf-42d4-bd97-567a6b2a6058
+  dependency:
+  - name: Falcon_Monitor_Query_360
+    status:
+      status_code: WARNING
+      error_message: Not exported.
+  - name: Falcon_Monitor_System_Stats_360
+    status:
+      status_code: WARNING
+      error_message: Not exported.
+  - name: Falcon_Monitor_Data_Load_360
+    status:
+      status_code: WARNING
+      error_message: Not exported.
+  - name: Load Aggregated View
+    status:
+      status_code: WARNING
+      error_message: Not exported.
