@@ -1,6 +1,6 @@
 guid: ddbabde4-c5a1-4e2b-aad3-1d9cb0ad5152
 pinboard:
-  name: Basic Pinboard I
+  name: Basic Pinboard J
   description: "This pinboard contains a chart, a table and a headline visualization based on TPCH."
   visualizations:
   - id: Viz_1
