@@ -1,6 +1,6 @@
 object:
-- name: BasicPinboard2
-  filename: BasicPinboard2.pinboard.tml
+- name: Basic Pinboard
+  filename: Basic Pinboard.pinboard.tml
   status:
     status_code: OK
   type: pinboard
