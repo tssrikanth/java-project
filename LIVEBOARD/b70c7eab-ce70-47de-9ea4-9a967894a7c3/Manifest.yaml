@@ -1,0 +1,24 @@
+object:
+- name: Falcon_Varz_360_Overview
+  filename: Falcon_Varz_360_Overview.pinboard.tml
+  status:
+    status_code: OK
+  type: pinboard
+  id: b70c7eab-ce70-47de-9ea4-9a967894a7c3
+  dependency:
+  - name: Falcon_Monitor_Varz_360
+    status:
+      status_code: ERROR
+      error_message: |-
+        Error Code: FORBIDDEN Incident Id: 357867ac-c5d1-466f-9a33-d2c91007d657
+        com.thoughtspot.callosum.metadata.MetadataException: Error Code: FORBIDDEN Incident Id: 357867ac-c5d1-466f-9a33-d2c91007d657
+        Error Message: Cannot download EDoc due to lack of access to objects
+- name: Falcon_Monitor_Varz_360
+  status:
+    status_code: ERROR
+    error_message: |-
+      Error Code: FORBIDDEN Incident Id: 357867ac-c5d1-466f-9a33-d2c91007d657
+      com.thoughtspot.callosum.metadata.MetadataException: Error Code: FORBIDDEN Incident Id: 357867ac-c5d1-466f-9a33-d2c91007d657
+      Error Message: Cannot download EDoc due to lack of access to objects
+  type: worksheet
+  id: d2a8b158-6464-47c8-9249-205a23c369ee

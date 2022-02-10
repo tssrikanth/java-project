@@ -1,0 +1,900 @@
+guid: b70c7eab-ce70-47de-9ea4-9a967894a7c3
+pinboard:
+  name: Falcon_Varz_360_Overview
+  description: Provides info about Falcon services based on varzs
+  visualizations:
+  - id: Viz_1
+    answer:
+      name: Falcon Worker Subresult Cache Utilization
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[hostport] [timestamp] [falcon.worker.subresult_cache.bytes_size] [falcon.worker.subresult_cache.num_entries] [falcon.worker.subresult_cache.num_in_memory_hits] [falcon.worker.subresult_cache.num_lookups] [falcon.worker.subresult_cache.num_store_hits] [falcon.worker.subresult_cache.num_store_loads] [falcon.worker.subresult_cache.store_lookups] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: hostport
+      - name: Total falcon.worker.subresult_cache.num_in_memory_hits
+      - name: Total falcon.worker.subresult_cache.num_entries
+      - name: Day(timestamp)
+      - name: Total falcon.worker.subresult_cache.bytes_size
+      - name: Total falcon.worker.subresult_cache.num_lookups
+      - name: Total falcon.worker.subresult_cache.num_store_loads
+      - name: Total falcon.worker.subresult_cache.store_lookups
+      - name: Total falcon.worker.subresult_cache.num_store_hits
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.worker.subresult_cache.bytes_size
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.subresult_cache.num_entries
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.subresult_cache.num_in_memory_hits
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.subresult_cache.num_lookups
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.subresult_cache.num_store_hits
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.subresult_cache.num_store_loads
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.subresult_cache.store_lookups
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.worker.subresult_cache.bytes_size
+        - Total falcon.worker.subresult_cache.num_entries
+        - Total falcon.worker.subresult_cache.num_in_memory_hits
+        - Total falcon.worker.subresult_cache.num_lookups
+        - Total falcon.worker.subresult_cache.num_store_hits
+        - Total falcon.worker.subresult_cache.num_store_loads
+        - Total falcon.worker.subresult_cache.store_lookups
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.worker.subresult_cache.bytes_size
+        - column_id: Total falcon.worker.subresult_cache.num_entries
+        - column_id: Total falcon.worker.subresult_cache.num_in_memory_hits
+        - column_id: Total falcon.worker.subresult_cache.num_lookups
+        - column_id: Total falcon.worker.subresult_cache.num_store_hits
+        - column_id: Total falcon.worker.subresult_cache.num_store_loads
+        - column_id: Total falcon.worker.subresult_cache.store_lookups
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.worker.subresult_cache.bytes_size
+          - Total falcon.worker.subresult_cache.num_entries
+          - Total falcon.worker.subresult_cache.num_in_memory_hits
+          - Total falcon.worker.subresult_cache.num_lookups
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"ceeb8ea5-1a3c-484c-9aa7-8aeddd02c342\":{\"linkedColumns\":[\"Total falcon.worker.subresult_cache.bytes_size\"],\"axisType\":\"Y\",\"isOpposite\":false},\"835aee18-26c4-403b-b95c-ff45a9b9007a\":{\"linkedColumns\":[\"Total falcon.worker.subresult_cache.num_entries\"],\"axisType\":\"Y\",\"isOpposite\":true},\"2a3f21e0-28da-4a86-b999-9e49dfd405e8\":{\"linkedColumns\":[\"Total falcon.worker.subresult_cache.num_in_memory_hits\"],\"axisType\":\"Y\",\"isOpposite\":true},\"497747fd-4b2b-4ab9-8da2-c8c54d0c14a9\":{\"linkedColumns\":[\"Total falcon.worker.subresult_cache.num_lookups\"],\"axisType\":\"Y\",\"isOpposite\":true},\"a2483d4b-621d-41aa-a61e-89110cafbc42\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"172.18.0.19:4001\":\"#48D1E0\",\"Total falcon.worker.subresult_cache.bytes_size\":\"#06BF7F\",\"Total falcon.worker.subresult_cache.num_entries\":\"#FCC838\",\"Total falcon.worker.subresult_cache.num_in_memory_hits\":\"#48D1E0\",\"Total falcon.worker.subresult_cache.num_lookups\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.worker.subresult_cache.bytes_size\":{},\"Total falcon.worker.subresult_cache.num_entries\":{},\"Total falcon.worker.subresult_cache.num_in_memory_hits\":{},\"Total falcon.worker.subresult_cache.num_lookups\":{},\"Total falcon.worker.subresult_cache.num_store_hits\":{},\"Total falcon.worker.subresult_cache.num_store_loads\":{},\"Total falcon.worker.subresult_cache.store_lookups\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_2
+    answer:
+      name: Falcon Worker Result Cache Utilization
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.worker.results_cache.byte_size] [falcon.worker.results_cache.hits] [falcon.worker.results_cache.lookups] [falcon.worker.results_cache.num_entries] [hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].daily [timestamp].today"
+      answer_columns:
+      - name: Day(timestamp)
+      - name: Total falcon.worker.results_cache.lookups
+      - name: Total falcon.worker.results_cache.num_entries
+      - name: hostport
+      - name: Total falcon.worker.results_cache.byte_size
+      - name: Total falcon.worker.results_cache.hits
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.worker.results_cache.byte_size
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.results_cache.hits
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.results_cache.lookups
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.results_cache.num_entries
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.worker.results_cache.byte_size
+        - Total falcon.worker.results_cache.hits
+        - Total falcon.worker.results_cache.lookups
+        - Total falcon.worker.results_cache.num_entries
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.worker.results_cache.byte_size
+        - column_id: Total falcon.worker.results_cache.hits
+        - column_id: Total falcon.worker.results_cache.lookups
+        - column_id: Total falcon.worker.results_cache.num_entries
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.worker.results_cache.byte_size
+          - Total falcon.worker.results_cache.hits
+          - Total falcon.worker.results_cache.lookups
+          - Total falcon.worker.results_cache.num_entries
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"66c1d712-f913-4008-b5fe-9cf03051452d\":{\"linkedColumns\":[\"Total falcon.worker.results_cache.byte_size\"],\"axisType\":\"Y\",\"isOpposite\":false},\"1ca143c6-2d22-40f9-9c35-bc7b9bb65222\":{\"linkedColumns\":[\"Total falcon.worker.results_cache.hits\"],\"axisType\":\"Y\",\"isOpposite\":true},\"f7ed4520-cb0e-43de-ab4a-05c9261511ed\":{\"linkedColumns\":[\"Total falcon.worker.results_cache.lookups\"],\"axisType\":\"Y\",\"isOpposite\":true},\"ac4ecb23-45bc-4ea1-9f09-d57aa06c9965\":{\"linkedColumns\":[\"Total falcon.worker.results_cache.num_entries\"],\"axisType\":\"Y\",\"isOpposite\":true},\"b0a89d2d-9ea7-4620-a6ab-feef85b178e7\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total falcon.worker.results_cache.byte_size\":\"#06BF7F\",\"Total falcon.worker.results_cache.hits\":\"#FCC838\",\"Total falcon.worker.results_cache.lookups\":\"#48D1E0\",\"Total falcon.worker.results_cache.num_entries\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.worker.results_cache.byte_size\":{},\"Total falcon.worker.results_cache.hits\":{},\"Total falcon.worker.results_cache.lookups\":{},\"Total falcon.worker.results_cache.num_entries\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_3
+    answer:
+      name: Falcon Worker Memory Manager
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today [falcon.worker.memory_manager.clients_with_rejection] [falcon.worker.memory_manager.current_allotted_bytes] [falcon.worker.memory_manager.current_clients] [falcon.worker.memory_manager.current_emergency_in_use_bytes] [falcon.worker.memory_manager.current_uncommitted_bytes] [falcon.worker.memory_manager.emergency_reserve_situations] [falcon.worker.memory_manager.meminfo.read_failures]"
+      answer_columns:
+      - name: Total falcon.worker.memory_manager.current_clients
+      - name: Total falcon.worker.memory_manager.current_allotted_bytes
+      - name: hostport
+      - name: Total falcon.worker.memory_manager.clients_with_rejection
+      - name: Total falcon.worker.memory_manager.meminfo.read_failures
+      - name: Total falcon.worker.memory_manager.current_emergency_in_use_bytes
+      - name: Total falcon.worker.memory_manager.emergency_reserve_situations
+      - name: Total falcon.worker.memory_manager.current_uncommitted_bytes
+      - name: Day(timestamp)
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.worker.memory_manager.clients_with_rejection
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.memory_manager.current_allotted_bytes
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.memory_manager.current_clients
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.memory_manager.current_emergency_in_use_bytes
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.memory_manager.current_uncommitted_bytes
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.memory_manager.emergency_reserve_situations
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.memory_manager.meminfo.read_failures
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.worker.memory_manager.clients_with_rejection
+        - Total falcon.worker.memory_manager.current_allotted_bytes
+        - Total falcon.worker.memory_manager.current_clients
+        - Total falcon.worker.memory_manager.current_emergency_in_use_bytes
+        - Total falcon.worker.memory_manager.current_uncommitted_bytes
+        - Total falcon.worker.memory_manager.emergency_reserve_situations
+        - Total falcon.worker.memory_manager.meminfo.read_failures
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.worker.memory_manager.clients_with_rejection
+        - column_id: Total falcon.worker.memory_manager.current_allotted_bytes
+        - column_id: Total falcon.worker.memory_manager.current_clients
+        - column_id: Total falcon.worker.memory_manager.current_emergency_in_use_bytes
+        - column_id: Total falcon.worker.memory_manager.current_uncommitted_bytes
+        - column_id: Total falcon.worker.memory_manager.emergency_reserve_situations
+        - column_id: Total falcon.worker.memory_manager.meminfo.read_failures
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.worker.memory_manager.clients_with_rejection
+          - Total falcon.worker.memory_manager.current_allotted_bytes
+          - Total falcon.worker.memory_manager.current_clients
+          - Total falcon.worker.memory_manager.current_emergency_in_use_bytes
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0,\"visibleSeriesNames\":[\"Total falcon.worker.memory_manager.clients_with_rejection\",\"Total falcon.worker.memory_manager.current_allotted_bytes\",\"Total falcon.worker.memory_manager.current_clients\",\"Total falcon.worker.memory_manager.current_emergency_in_use_bytes\"]},\"axisProperties\":{\"77ff857f-4026-4d19-a5ab-6f06dff27f22\":{\"linkedColumns\":[\"Total falcon.worker.memory_manager.clients_with_rejection\"],\"axisType\":\"Y\",\"isOpposite\":false},\"ea2fbe24-9b61-4a3c-8c0e-012398c5e2e2\":{\"linkedColumns\":[\"Total falcon.worker.memory_manager.current_allotted_bytes\"],\"axisType\":\"Y\",\"isOpposite\":true},\"49b740a6-19b7-428a-a90e-1c05371f0fff\":{\"linkedColumns\":[\"Total falcon.worker.memory_manager.current_clients\"],\"axisType\":\"Y\",\"isOpposite\":true},\"26c5298b-cbb2-48d9-b0d3-b43b684bfbc3\":{\"linkedColumns\":[\"Total falcon.worker.memory_manager.current_emergency_in_use_bytes\"],\"axisType\":\"Y\",\"isOpposite\":true},\"2da02847-6a5c-45a5-a4b5-5b941c6e50f0\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total falcon.worker.memory_manager.clients_with_rejection\":\"#06BF7F\",\"Total falcon.worker.memory_manager.current_allotted_bytes\":\"#FCC838\",\"Total falcon.worker.memory_manager.current_clients\":\"#48D1E0\",\"Total falcon.worker.memory_manager.current_emergency_in_use_bytes\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.worker.memory_manager.clients_with_rejection\":{},\"Total falcon.worker.memory_manager.current_allotted_bytes\":{},\"Total falcon.worker.memory_manager.current_clients\":{},\"Total falcon.worker.memory_manager.current_emergency_in_use_bytes\":{},\"Total falcon.worker.memory_manager.current_uncommitted_bytes\":{},\"Total falcon.worker.memory_manager.emergency_reserve_situations\":{},\"Total falcon.worker.memory_manager.meminfo.read_failures\":{}}}"
+      display_mode: TABLE_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_4
+    answer:
+      name: Falcon Worker Execution Metrics
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today [falcon.worker.metrics._avg_query_running_time_micro_seconds] [falcon.worker.metrics._num_active_execute_query] [falcon.worker.metrics._num_active_execute_tasq] [falcon.worker.metrics._num_active_open_scanner] [falcon.worker.metrics._num_total_execute_query] [falcon.worker.metrics._num_total_execute_tasq] [falcon.worker.metrics._num_total_open_scanner]"
+      answer_columns:
+      - name: Total falcon.worker.metrics._num_active_execute_tasq
+      - name: Day(timestamp)
+      - name: Total falcon.worker.metrics._avg_query_running_time_micro_seconds
+      - name: Total falcon.worker.metrics._num_active_open_scanner
+      - name: Total falcon.worker.metrics._num_total_open_scanner
+      - name: Total falcon.worker.metrics._num_active_execute_query
+      - name: Total falcon.worker.metrics._num_total_execute_tasq
+      - name: hostport
+      - name: Total falcon.worker.metrics._num_total_execute_query
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.worker.metrics._avg_query_running_time_micro_seconds
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.metrics._num_active_execute_query
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.metrics._num_active_execute_tasq
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.metrics._num_active_open_scanner
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.metrics._num_total_execute_query
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.metrics._num_total_execute_tasq
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.metrics._num_total_open_scanner
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.worker.metrics._avg_query_running_time_micro_seconds
+        - Total falcon.worker.metrics._num_active_execute_query
+        - Total falcon.worker.metrics._num_active_execute_tasq
+        - Total falcon.worker.metrics._num_active_open_scanner
+        - Total falcon.worker.metrics._num_total_execute_query
+        - Total falcon.worker.metrics._num_total_execute_tasq
+        - Total falcon.worker.metrics._num_total_open_scanner
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.worker.metrics._avg_query_running_time_micro_seconds
+        - column_id: Total falcon.worker.metrics._num_active_execute_query
+        - column_id: Total falcon.worker.metrics._num_active_execute_tasq
+        - column_id: Total falcon.worker.metrics._num_active_open_scanner
+        - column_id: Total falcon.worker.metrics._num_total_execute_query
+        - column_id: Total falcon.worker.metrics._num_total_execute_tasq
+        - column_id: Total falcon.worker.metrics._num_total_open_scanner
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.worker.metrics._avg_query_running_time_micro_seconds
+          - Total falcon.worker.metrics._num_active_execute_query
+          - Total falcon.worker.metrics._num_active_execute_tasq
+          - Total falcon.worker.metrics._num_active_open_scanner
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"a9e7aec3-ffe7-4dc2-a5e9-84ec0d03a8f0\":{\"linkedColumns\":[\"Total falcon.worker.metrics._avg_query_running_time_micro_seconds\"],\"axisType\":\"Y\",\"isOpposite\":false},\"877c3dcd-de40-45b4-8cfd-1fb9b80f355f\":{\"linkedColumns\":[\"Total falcon.worker.metrics._num_active_execute_query\"],\"axisType\":\"Y\",\"isOpposite\":true},\"fe7ac668-c3ad-48fb-a3e1-896ca58931b7\":{\"linkedColumns\":[\"Total falcon.worker.metrics._num_active_execute_tasq\"],\"axisType\":\"Y\",\"isOpposite\":true},\"03edd66b-7c60-4c8e-b228-f38dbe07564a\":{\"linkedColumns\":[\"Total falcon.worker.metrics._num_active_open_scanner\"],\"axisType\":\"Y\",\"isOpposite\":true},\"e1ae3644-2b73-452f-bcea-7203ff6a04f6\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total falcon.worker.metrics._avg_query_running_time_micro_seconds\":\"#06BF7F\",\"Total falcon.worker.metrics._num_active_execute_query\":\"#FCC838\",\"Total falcon.worker.metrics._num_active_execute_tasq\":\"#48D1E0\",\"Total falcon.worker.metrics._num_active_open_scanner\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.worker.metrics._avg_query_running_time_micro_seconds\":{},\"Total falcon.worker.metrics._num_active_execute_query\":{},\"Total falcon.worker.metrics._num_active_execute_tasq\":{},\"Total falcon.worker.metrics._num_active_open_scanner\":{},\"Total falcon.worker.metrics._num_total_execute_query\":{},\"Total falcon.worker.metrics._num_total_execute_tasq\":{},\"Total falcon.worker.metrics._num_total_open_scanner\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_5
+    answer:
+      name: Falcon Query Runtime (Average and Max)
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[hostport] [timestamp] [timestamp].hourly [timestamp].'last week' [timestamp].today average [QueryRuntimeSeconds] max [QueryRuntimeSeconds]"
+      answer_columns:
+      - name: Hour(timestamp)
+      - name: Maximum QueryRuntimeSeconds
+      - name: Average QueryRuntimeSeconds
+      - name: hostport
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Hour(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Average QueryRuntimeSeconds
+          headline_aggregation: TABLE_AGGR
+        - column_id: Maximum QueryRuntimeSeconds
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - hostport
+        - Hour(timestamp)
+        - Average QueryRuntimeSeconds
+        - Maximum QueryRuntimeSeconds
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: hostport
+        - column_id: Hour(timestamp)
+        - column_id: Average QueryRuntimeSeconds
+        - column_id: Maximum QueryRuntimeSeconds
+        axis_configs:
+        - x:
+          - Hour(timestamp)
+          "y":
+          - Average QueryRuntimeSeconds
+          - Maximum QueryRuntimeSeconds
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0,\"visibleSeriesNames\":[\"Average QueryRuntimeSeconds\",\"Maximum QueryRuntimeSeconds\"]},\"axisProperties\":{\"f9946e3b-65cc-4a76-8951-c640ecd11191\":{\"linkedColumns\":[\"Average QueryRuntimeSeconds\"],\"axisType\":\"Y\",\"isOpposite\":false},\"292543f2-7e5f-48b2-a486-15b5ac5a864e\":{\"linkedColumns\":[\"Maximum QueryRuntimeSeconds\"],\"axisType\":\"Y\",\"isOpposite\":true},\"e112983c-ab0e-4a65-8fed-0cff9d3562f8\":{\"linkedColumns\":[\"Hour(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Average QueryRuntimeSeconds\":\"#2E75F0\",\"Maximum QueryRuntimeSeconds\":\"#48D1E0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Hour(timestamp)\":{},\"Average QueryRuntimeSeconds\":{},\"Maximum QueryRuntimeSeconds\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_6
+    answer:
+      name: Falcon Query Execution Profile
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      formulas:
+      - id: Runtime_in_secs
+        name: Runtime_in_secs
+        expr: "[falcon.worker.metrics._avg_query_running_time_micro_seconds] / 1000000"
+      search_query: "[hostport] [timestamp] [timestamp].hourly [timestamp].'last week' [timestamp].today count [falcon.worker.metrics._num_total_execute_query] average [Runtime_in_secs]"
+      answer_columns:
+      - name: Hour(timestamp)
+      - name: Average Runtime_in_secs
+      - name: hostport
+      - name: Number of falcon.worker.metrics._num_total_execute_query
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Hour(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Number of falcon.worker.metrics._num_total_execute_query
+          headline_aggregation: AVERAGE
+        - column_id: Average Runtime_in_secs
+          headline_aggregation: TABLE_AGGR
+        ordered_column_ids:
+        - hostport
+        - Hour(timestamp)
+        - Number of falcon.worker.metrics._num_total_execute_query
+        - Average Runtime_in_secs
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Hour(timestamp)
+        - column_id: Number of falcon.worker.metrics._num_total_execute_query
+        - column_id: Average Runtime_in_secs
+        axis_configs:
+        - x:
+          - Hour(timestamp)
+          "y":
+          - Number of falcon.worker.metrics._num_total_execute_query
+          - Average Runtime_in_secs
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0,\"visibleSeriesNames\":[\"Number of falcon.worker.metrics._num_total_execute_query\",\"Average Runtime_in_secs\"]},\"axisProperties\":{\"dffa32e8-9081-4d61-aeb9-af2ebb48c27c\":{\"linkedColumns\":[\"Number of falcon.worker.metrics._num_total_execute_query\"],\"axisType\":\"Y\",\"isOpposite\":true,\"name\":\"Count of Queries\"},\"2160da47-4d0e-4fbf-8f78-15295f7664e0\":{\"linkedColumns\":[\"Average Runtime_in_secs\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Avg Runtime (s)\"},\"5ff24ec7-73cf-487e-a823-614c4affcb74\":{\"linkedColumns\":[\"Hour(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Number of falcon.worker.metrics._num_total_execute_query\":\"#48D1E0\",\"Average Runtime_in_secs\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Hour(timestamp)\":{},\"Number of falcon.worker.metrics._num_total_execute_query\":{},\"Average Runtime_in_secs\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_7
+    answer:
+      name: Daily Data Load Statistics
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.config.num_cancelled_dml_load_ops] [falcon.config.num_cancelled_load_ops] [falcon.config.num_cancelled_serialized_load_ops] [falcon.config.num_dml_load_ops] [falcon.config.num_failed_dml_load_ops] [falcon.config.num_failed_load_ops] [falcon.config.num_failed_serialized_load_ops] [falcon.config.num_load_ops] [falcon.config.num_serialized_load_ops] [hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: hostport
+      - name: Total falcon.config.num_failed_dml_load_ops
+      - name: Total falcon.config.num_load_ops
+      - name: Total falcon.config.num_cancelled_serialized_load_ops
+      - name: Total falcon.config.num_cancelled_load_ops
+      - name: Total falcon.config.num_failed_serialized_load_ops
+      - name: Total falcon.config.num_failed_load_ops
+      - name: Total falcon.config.num_serialized_load_ops
+      - name: Total falcon.config.num_cancelled_dml_load_ops
+      - name: Total falcon.config.num_dml_load_ops
+      - name: Day(timestamp)
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.config.num_cancelled_dml_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_cancelled_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_cancelled_serialized_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_dml_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_failed_dml_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_failed_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_failed_serialized_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_load_ops
+          headline_aggregation: SUM
+        - column_id: Total falcon.config.num_serialized_load_ops
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.config.num_cancelled_dml_load_ops
+        - Total falcon.config.num_cancelled_load_ops
+        - Total falcon.config.num_cancelled_serialized_load_ops
+        - Total falcon.config.num_dml_load_ops
+        - Total falcon.config.num_failed_dml_load_ops
+        - Total falcon.config.num_failed_load_ops
+        - Total falcon.config.num_failed_serialized_load_ops
+        - Total falcon.config.num_load_ops
+        - Total falcon.config.num_serialized_load_ops
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.config.num_cancelled_dml_load_ops
+        - column_id: Total falcon.config.num_cancelled_load_ops
+        - column_id: Total falcon.config.num_cancelled_serialized_load_ops
+        - column_id: Total falcon.config.num_dml_load_ops
+        - column_id: Total falcon.config.num_failed_dml_load_ops
+        - column_id: Total falcon.config.num_failed_load_ops
+        - column_id: Total falcon.config.num_failed_serialized_load_ops
+        - column_id: Total falcon.config.num_load_ops
+        - column_id: Total falcon.config.num_serialized_load_ops
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.config.num_cancelled_dml_load_ops
+          - Total falcon.config.num_cancelled_load_ops
+          - Total falcon.config.num_cancelled_serialized_load_ops
+          - Total falcon.config.num_dml_load_ops
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"28c48565-c035-49ff-9a1d-e4dd87775fcd\":{\"linkedColumns\":[\"Total falcon.config.num_cancelled_dml_load_ops\"],\"axisType\":\"Y\",\"isOpposite\":false},\"7ac73ded-2c98-430c-b09f-f3a6627a7162\":{\"linkedColumns\":[\"Total falcon.config.num_cancelled_load_ops\"],\"axisType\":\"Y\",\"isOpposite\":true},\"1a19c386-c390-47a4-99a0-db5d40a8adbf\":{\"linkedColumns\":[\"Total falcon.config.num_cancelled_serialized_load_ops\"],\"axisType\":\"Y\",\"isOpposite\":true},\"713dcb31-835c-4b84-87f1-1fc6762cb74f\":{\"linkedColumns\":[\"Total falcon.config.num_dml_load_ops\"],\"axisType\":\"Y\",\"isOpposite\":true},\"029cb4d5-e8f6-45bb-81bc-e750e419834b\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total falcon.config.num_cancelled_dml_load_ops\":\"#06BF7F\",\"Total falcon.config.num_cancelled_load_ops\":\"#FCC838\",\"Total falcon.config.num_cancelled_serialized_load_ops\":\"#48D1E0\",\"Total falcon.config.num_dml_load_ops\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.config.num_cancelled_dml_load_ops\":{},\"Total falcon.config.num_cancelled_load_ops\":{},\"Total falcon.config.num_cancelled_serialized_load_ops\":{},\"Total falcon.config.num_dml_load_ops\":{},\"Total falcon.config.num_failed_dml_load_ops\":{},\"Total falcon.config.num_failed_load_ops\":{},\"Total falcon.config.num_failed_serialized_load_ops\":{},\"Total falcon.config.num_load_ops\":{},\"Total falcon.config.num_serialized_load_ops\":{}}}"
+      display_mode: TABLE_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_8
+    answer:
+      name: Falcon Memblock Usage
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads] [falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes] [falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks] [falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched] [hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes
+      - name: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched
+      - name: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads
+      - name: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks
+      - name: Day(timestamp)
+      - name: hostport
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads
+        - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes
+        - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks
+        - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads
+          - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes
+          - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks
+          - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"8c740e9e-bc76-4a93-8845-f8b5eb0a6aaa\":{\"linkedColumns\":[\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads\"],\"axisType\":\"Y\",\"isOpposite\":false},\"dcb0df49-eadc-4564-be72-b244ce083c49\":{\"linkedColumns\":[\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes\"],\"axisType\":\"Y\",\"isOpposite\":true},\"3361beda-73fe-48e3-91e1-9cd88240e06e\":{\"linkedColumns\":[\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks\"],\"axisType\":\"Y\",\"isOpposite\":true},\"f2c10a9c-a357-4ec8-be5c-26f9ec1cc0bf\":{\"linkedColumns\":[\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched\"],\"axisType\":\"Y\",\"isOpposite\":true},\"be820fe6-39d4-465e-b85d-f3d4abe51b4b\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads\":\"#06BF7F\",\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes\":\"#FCC838\",\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks\":\"#48D1E0\",\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_reads\":{},\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_successful_writes\":{},\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks\":{},\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblocks_touched\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_9
+    answer:
+      name: Falcon Memblock Failures
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads] [falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes] [hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes
+      - name: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads
+      - name: Day(timestamp)
+      - name: hostport
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads
+        - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads
+        - column_id: Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads
+          - Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"a00fd5cd-cf07-43b1-93af-de74ace48b68\":{\"linkedColumns\":[\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads\"],\"axisType\":\"Y\",\"isOpposite\":false,\"name\":\"Number of failed reads\"},\"5636da0a-5d2b-45fe-8c9a-668a20ec14d3\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"},\"cf05c64f-cabe-49a0-9552-5d07d16d182e\":{\"linkedColumns\":[\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes\"],\"axisType\":\"Y\",\"isOpposite\":true,\"name\":\"Number of failed writes\"}},\"systemSeriesColors\":{\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads\":\"#48D1E0\",\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_reads\":{},\"Total falcon.repository.mbstore._.._falcon_ramdisk_config_memblock_.num_memblock_failed_writes\":{\"dataLabels\":false}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_10
+    answer:
+      name: Falcon Compiler Cache Daily Usage (Detailed)
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.worker.compiler_aggressive_cache.hits] [falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean] [falcon.worker.compiler_cache.hits] [falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean] [falcon.worker.compiler_cache.lookups] [falcon.worker.compiler_cache.num_aggressive_compiles] [falcon.worker.compiler_cache.num_background_optimized_compiles] [falcon.worker.compiler_cache.num_concurrent_compiles] [falcon.worker.compiler_cache.num_entries] [falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit] [falcon.worker.compiler_cache.num_failed_remote_compile_result_loads] [falcon.worker.compiler_cache.num_failed_remote_compiles] [falcon.worker.compiler_cache.num_pending_background_compiles] [falcon.worker.compiler_cache.num_secondary_cache_hits] [falcon.worker.compiler_cache.num_secondary_cache_load_failures] [falcon.worker.compiler_cache.num_successful_remote_compiles] [falcon.worker.compiler_cache.optimized_compilation_dist_distribution_mean] [falcon.worker.compiler_cache.overall_compilation_dist_distribution_mean] [falcon.worker.compiler_cache.remote_compilation_dist_distribution_mean] [falcon.worker.compiler_cache.secondary_cache_lookup_dist_distribution_mean] [falcon.worker.compiler_optimized_cache.hits] [hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: Total falcon.worker.compiler_cache.num_aggressive_compiles
+      - name: Total falcon.worker.compiler_cache.secondary_cache_lookup_dist_distribution_mean
+      - name: Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+      - name: Total falcon.worker.compiler_cache.num_background_optimized_compiles
+      - name: hostport
+      - name: Total falcon.worker.compiler_cache.num_failed_remote_compiles
+      - name: Total falcon.worker.compiler_cache.remote_compilation_dist_distribution_mean
+      - name: Total falcon.worker.compiler_optimized_cache.hits
+      - name: Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+      - name: Total falcon.worker.compiler_cache.optimized_compilation_dist_distribution_mean
+      - name: Total falcon.worker.compiler_cache.overall_compilation_dist_distribution_mean
+      - name: Total falcon.worker.compiler_cache.num_pending_background_compiles
+      - name: Total falcon.worker.compiler_cache.num_successful_remote_compiles
+      - name: Total falcon.worker.compiler_cache.hits
+      - name: Day(timestamp)
+      - name: Total falcon.worker.compiler_cache.num_concurrent_compiles
+      - name: Total falcon.worker.compiler_cache.num_entries
+      - name: Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+      - name: Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+      - name: Total falcon.worker.compiler_cache.num_secondary_cache_hits
+      - name: Total falcon.worker.compiler_cache.lookups
+      - name: Total falcon.worker.compiler_aggressive_cache.hits
+      - name: Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.worker.compiler_aggressive_cache.hits
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.hits
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.lookups
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_aggressive_compiles
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_background_optimized_compiles
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_concurrent_compiles
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_entries
+        - column_id: Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_pending_background_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_hits
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+        - column_id: Total falcon.worker.compiler_cache.num_successful_remote_compiles
+        - column_id: Total falcon.worker.compiler_cache.optimized_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.overall_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.remote_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.secondary_cache_lookup_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_optimized_cache.hits
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.worker.compiler_aggressive_cache.hits
+        - Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.hits
+        - Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.lookups
+        - Total falcon.worker.compiler_cache.num_aggressive_compiles
+        - Total falcon.worker.compiler_cache.num_background_optimized_compiles
+        - Total falcon.worker.compiler_cache.num_concurrent_compiles
+        - Total falcon.worker.compiler_cache.num_entries
+        - Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+        - Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+        - Total falcon.worker.compiler_cache.num_failed_remote_compiles
+        - Total falcon.worker.compiler_cache.num_pending_background_compiles
+        - Total falcon.worker.compiler_cache.num_secondary_cache_hits
+        - Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+        - Total falcon.worker.compiler_cache.num_successful_remote_compiles
+        - Total falcon.worker.compiler_cache.optimized_compilation_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.overall_compilation_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.remote_compilation_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.secondary_cache_lookup_dist_distribution_mean
+        - Total falcon.worker.compiler_optimized_cache.hits
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.worker.compiler_aggressive_cache.hits
+        - column_id: Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.hits
+        - column_id: Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.lookups
+        - column_id: Total falcon.worker.compiler_cache.num_aggressive_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_background_optimized_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_concurrent_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_entries
+        - column_id: Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_pending_background_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_hits
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+        - column_id: Total falcon.worker.compiler_cache.num_successful_remote_compiles
+        - column_id: Total falcon.worker.compiler_cache.optimized_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.overall_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.remote_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.secondary_cache_lookup_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_optimized_cache.hits
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.worker.compiler_aggressive_cache.hits
+          - Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+          - Total falcon.worker.compiler_cache.hits
+          - Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"764a89f7-492b-417e-8e67-1f2c14d5b784\":{\"linkedColumns\":[\"Total falcon.worker.compiler_aggressive_cache.hits\"],\"axisType\":\"Y\",\"isOpposite\":false},\"70255ce5-57ad-4d02-8481-5af0c2621890\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean\"],\"axisType\":\"Y\",\"isOpposite\":true},\"568886ff-87e0-426c-b521-58cfc3800459\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.hits\"],\"axisType\":\"Y\",\"isOpposite\":true},\"5b5ab23d-0a80-4830-8e46-25823868423c\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean\"],\"axisType\":\"Y\",\"isOpposite\":true},\"e44baa31-3036-4e12-a5f8-2e3005fa7d5e\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.worker.compiler_aggressive_cache.hits\":{},\"Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.hits\":{},\"Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.lookups\":{},\"Total falcon.worker.compiler_cache.num_aggressive_compiles\":{},\"Total falcon.worker.compiler_cache.num_background_optimized_compiles\":{},\"Total falcon.worker.compiler_cache.num_concurrent_compiles\":{},\"Total falcon.worker.compiler_cache.num_entries\":{},\"Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit\":{},\"Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads\":{},\"Total falcon.worker.compiler_cache.num_failed_remote_compiles\":{},\"Total falcon.worker.compiler_cache.num_pending_background_compiles\":{},\"Total falcon.worker.compiler_cache.num_secondary_cache_hits\":{},\"Total falcon.worker.compiler_cache.num_secondary_cache_load_failures\":{},\"Total falcon.worker.compiler_cache.num_successful_remote_compiles\":{},\"Total falcon.worker.compiler_cache.optimized_compilation_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.overall_compilation_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.remote_compilation_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.secondary_cache_lookup_dist_distribution_mean\":{},\"Total falcon.worker.compiler_optimized_cache.hits\":{}}}"
+      display_mode: TABLE_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_11
+    answer:
+      name: FalconWorker ThreadPool Queue Size
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[FalconWorkerThreadPool-queue-size] [hostport] [timestamp] [timestamp].hourly [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: hostport
+      - name: Hour(timestamp)
+      - name: Total FalconWorkerThreadPool-queue-size
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Hour(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total FalconWorkerThreadPool-queue-size
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - hostport
+        - Hour(timestamp)
+        - Total FalconWorkerThreadPool-queue-size
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: LINE
+        chart_columns:
+        - column_id: hostport
+        - column_id: Hour(timestamp)
+        - column_id: Total FalconWorkerThreadPool-queue-size
+        axis_configs:
+        - x:
+          - Hour(timestamp)
+          "y":
+          - Total FalconWorkerThreadPool-queue-size
+          color:
+          - hostport
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"eb59c138-6579-453d-8a00-269ded4d53fb\":{\"linkedColumns\":[\"Total FalconWorkerThreadPool-queue-size\"],\"axisType\":\"Y\",\"isOpposite\":false},\"71cdb8b8-d4f0-48bc-99fb-1eb483cd3a9f\":{\"linkedColumns\":[\"Hour(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"172.18.0.19:4001\":\"#06BF7F\"},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Hour(timestamp)\":{},\"Total FalconWorkerThreadPool-queue-size\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_12
+    answer:
+      name: Falcon Tabular Configuration
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds] [falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start] [falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered] [falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes] [falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_tables] [falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_updates] [timestamp] [hostport] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start
+      - name: hostport
+      - name: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_tables
+      - name: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes
+      - name: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered
+      - name: Day(timestamp)
+      - name: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_updates
+      - name: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds
+      table:
+        table_columns:
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_tables
+          headline_aggregation: SUM
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_updates
+          headline_aggregation: SUM
+        ordered_column_ids:
+        - Day(timestamp)
+        - hostport
+        - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds
+        - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start
+        - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered
+        - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes
+        - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_tables
+        - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_updates
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: Day(timestamp)
+        - column_id: hostport
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_tables
+        - column_id: Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_updates
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds
+          - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start
+          - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered
+          - Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"62d55fbe-af35-4600-a366-9d073bfb5125\":{\"linkedColumns\":[\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds\"],\"axisType\":\"Y\",\"isOpposite\":false},\"67ed4e2d-4d38-4115-b0aa-d839593962de\":{\"linkedColumns\":[\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start\"],\"axisType\":\"Y\",\"isOpposite\":true},\"d33efe35-c1e4-42a1-9737-3408ebc7362b\":{\"linkedColumns\":[\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered\"],\"axisType\":\"Y\",\"isOpposite\":true},\"803b5823-4858-451e-8814-5804ec487507\":{\"linkedColumns\":[\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes\"],\"axisType\":\"Y\",\"isOpposite\":true},\"27f49a8b-e5e1-4c8c-88a2-bb7f2c3448aa\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"systemSeriesColors\":{\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds\":\"#06BF7F\",\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start\":\"#FCC838\",\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered\":\"#48D1E0\",\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes\":\"#2E75F0\"},\"version\":\"V3\",\"columnProperties\":{\"Day(timestamp)\":{},\"hostport\":{},\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_adds\":{},\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_found_at_start\":{},\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_recovered\":{},\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_removes\":{},\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_tables\":{},\"Total falcon.repository.tabmap._.._falcon_ramdisk_config_tabular_.num_updates\":{}}}"
+      display_mode: CHART_MODE
+      client_state: "{\"version\":\"V2\"}"
+  - id: Viz_13
+    answer:
+      name: Falcon Compiler Cache Daily Usage
+      tables:
+      - id: Falcon_Monitor_Varz_360
+        name: Falcon_Monitor_Varz_360
+      search_query: "[falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean] [falcon.worker.compiler_cache.hits] [falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean] [falcon.worker.compiler_cache.lookups] [falcon.worker.compiler_cache.num_concurrent_compiles] [falcon.worker.compiler_cache.num_entries] [falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit] [falcon.worker.compiler_cache.num_failed_remote_compile_result_loads] [falcon.worker.compiler_cache.num_failed_remote_compiles] [falcon.worker.compiler_cache.num_secondary_cache_hits] [falcon.worker.compiler_cache.num_secondary_cache_load_failures] [falcon.worker.compiler_cache.num_successful_remote_compiles] [hostport] [timestamp] [timestamp].daily [timestamp].'last week' [timestamp].today"
+      answer_columns:
+      - name: Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+      - name: hostport
+      - name: Total falcon.worker.compiler_cache.num_failed_remote_compiles
+      - name: Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+      - name: Total falcon.worker.compiler_cache.num_successful_remote_compiles
+      - name: Total falcon.worker.compiler_cache.hits
+      - name: Day(timestamp)
+      - name: Total falcon.worker.compiler_cache.num_concurrent_compiles
+      - name: Total falcon.worker.compiler_cache.num_entries
+      - name: Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+      - name: Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+      - name: Total falcon.worker.compiler_cache.num_secondary_cache_hits
+      - name: Total falcon.worker.compiler_cache.lookups
+      - name: Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+      table:
+        table_columns:
+        - column_id: hostport
+          headline_aggregation: COUNT_DISTINCT
+        - column_id: Day(timestamp)
+          headline_aggregation: MIN-MAX
+        - column_id: Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.hits
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.lookups
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_concurrent_compiles
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_entries
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+          headline_aggregation: SUM
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_hits
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+        - column_id: Total falcon.worker.compiler_cache.num_successful_remote_compiles
+        ordered_column_ids:
+        - hostport
+        - Day(timestamp)
+        - Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.hits
+        - Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+        - Total falcon.worker.compiler_cache.lookups
+        - Total falcon.worker.compiler_cache.num_concurrent_compiles
+        - Total falcon.worker.compiler_cache.num_entries
+        - Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+        - Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+        - Total falcon.worker.compiler_cache.num_failed_remote_compiles
+        - Total falcon.worker.compiler_cache.num_secondary_cache_hits
+        - Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+        - Total falcon.worker.compiler_cache.num_successful_remote_compiles
+        client_state: "{\"widthState\":{},\"wrapTableHeader\":true}"
+      chart:
+        type: COLUMN
+        chart_columns:
+        - column_id: hostport
+        - column_id: Day(timestamp)
+        - column_id: Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.hits
+        - column_id: Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+        - column_id: Total falcon.worker.compiler_cache.lookups
+        - column_id: Total falcon.worker.compiler_cache.num_concurrent_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_entries
+        - column_id: Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads
+        - column_id: Total falcon.worker.compiler_cache.num_failed_remote_compiles
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_hits
+        - column_id: Total falcon.worker.compiler_cache.num_secondary_cache_load_failures
+        - column_id: Total falcon.worker.compiler_cache.num_successful_remote_compiles
+        axis_configs:
+        - x:
+          - Day(timestamp)
+          "y":
+          - Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean
+          - Total falcon.worker.compiler_cache.hits
+          - Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean
+          - Total falcon.worker.compiler_cache.lookups
+        client_state: "{\"chartProperties\":{\"gridLines\":{},\"showRoundedNumbers\":true,\"chartSpecific\":{},\"responsiveLayoutPreference\":3.0},\"axisProperties\":{\"f7afcfc4-05e7-4024-95dc-4078a742410b\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean\"],\"axisType\":\"Y\",\"isOpposite\":false},\"941091d4-a32b-47ed-8cd6-e7c809b9d523\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.hits\"],\"axisType\":\"Y\",\"isOpposite\":true},\"209d7266-0765-4e7b-8275-9c1a0f5b1647\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean\"],\"axisType\":\"Y\",\"isOpposite\":true},\"5bf90e37-b2ec-4e2b-8d91-894f11804e55\":{\"linkedColumns\":[\"Total falcon.worker.compiler_cache.lookups\"],\"axisType\":\"Y\",\"isOpposite\":true},\"e4fd11be-5773-4343-ab4a-527a6874217d\":{\"linkedColumns\":[\"Day(timestamp)\"],\"axisType\":\"X\"}},\"version\":\"V3\",\"columnProperties\":{\"hostport\":{},\"Day(timestamp)\":{},\"Total falcon.worker.compiler_cache.aggressive_compilation_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.hits\":{},\"Total falcon.worker.compiler_cache.load_compiled_module_dist_distribution_mean\":{},\"Total falcon.worker.compiler_cache.lookups\":{},\"Total falcon.worker.compiler_cache.num_concurrent_compiles\":{},\"Total falcon.worker.compiler_cache.num_entries\":{},\"Total falcon.worker.compiler_cache.num_exceeded_seondary_cache_limit\":{},\"Total falcon.worker.compiler_cache.num_failed_remote_compile_result_loads\":{},\"Total falcon.worker.compiler_cache.num_failed_remote_compiles\":{},\"Total falcon.worker.compiler_cache.num_secondary_cache_hits\":{},\"Total falcon.worker.compiler_cache.num_secondary_cache_load_failures\":{},\"Total falcon.worker.compiler_cache.num_successful_remote_compiles\":{}}}"
+      display_mode: TABLE_MODE
+      client_state: "{\"version\":\"V2\"}"
+  layout:
+    tiles:
+    - visualization_id: Viz_2
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_1
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_4
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_11
+      size: SMALL
+    - visualization_id: Viz_12
+      size: SMALL
+    - visualization_id: Viz_6
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_5
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_3
+      size: LARGE_SMALL
+    - visualization_id: Viz_7
+      size: LARGE_SMALL
+    - visualization_id: Viz_8
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_9
+      size: MEDIUM_SMALL
+    - visualization_id: Viz_13
+      size: LARGE_SMALL
+    - visualization_id: Viz_10
+      size: LARGE_SMALL
