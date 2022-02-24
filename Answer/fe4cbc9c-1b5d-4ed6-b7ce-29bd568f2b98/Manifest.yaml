@@ -1,0 +1,40 @@
+object:
+- name: Average Revenue by Part
+  filename: Average Revenue by Part.answer.tml
+  status:
+    status_code: OK
+  type: answer
+  id: fe4cbc9c-1b5d-4ed6-b7ce-29bd568f2b98
+  dependency:
+  - name: SUPPLIER
+    filename: SUPPLIER.table.tml
+  - name: LINEORDER
+    filename: LINEORDER.table.tml
+  - name: PART
+    filename: PART.table.tml
+  - name: DATE
+    filename: DATE.table.tml
+- name: SUPPLIER
+  filename: SUPPLIER.table.tml
+  status:
+    status_code: OK
+  type: table
+  id: 95158c5f-7805-48f0-8802-c727d1785a04
+- name: LINEORDER
+  filename: LINEORDER.table.tml
+  status:
+    status_code: OK
+  type: table
+  id: 2445fe81-30d6-46fa-9f42-f6b1b4e01623
+- name: PART
+  filename: PART.table.tml
+  status:
+    status_code: OK
+  type: table
+  id: a7fc012e-bdb3-4e75-9ce4-b3f731d90136
+- name: DATE
+  filename: DATE.table.tml
+  status:
+    status_code: OK
+  type: table
+  id: 1c97ce56-e803-41c5-9132-3075425c8b41
